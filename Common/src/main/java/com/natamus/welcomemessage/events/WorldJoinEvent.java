@@ -51,5 +51,15 @@ public class WorldJoinEvent {
 			
 			StringFunctions.sendMessage(player, ConfigHandler.messageThreeText, threeColour, emptyline, ConfigHandler.messageThreeOptionalURL.trim());
 		}
+
+		if (!ConfigHandler.messageFourText.isEmpty()) {
+			ChatFormatting fourColour = ChatFormatting.getById(ConfigHandler.messageFourColourIndex);
+			if (fourColour == null) {
+				System.out.println("[Welcome Message Error] Unable to find text formatting colour for message four with '" + ConfigHandler.messageFourColourIndex + "'.");
+				return;
+			}
+
+			StringFunctions.sendMessage(player, ConfigHandler.messageFourText, threeColour, emptyline, ConfigHandler.messageFourOptionalURL.trim());
+		}
 	}
 }
